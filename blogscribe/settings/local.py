@@ -9,4 +9,11 @@ SECRET_KEY = env(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CSRF_TRUSTED_ORIGINS = ["https://localhost:8080"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8080"]
+
+EMAIL_BACKEND = "djcelery_email.backends.Celery.EmailBackend"
+EMAIL_HOST = env("EMAIL_HOST", default="mailhog")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_PORT = "support@blogscribe.com"
+DOMAIN = env("DOMAIN")
+SITE_NAME = "Blogscribe"

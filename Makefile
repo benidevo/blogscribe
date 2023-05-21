@@ -18,6 +18,9 @@ dhow-logs:
 show-logs-api:
 	docker compose -f local.yml logs api
 
+show-logs-flower:
+	docker compose -f local.yml logs flower
+
 makemigrations:
 	docker compose -f local.yml run --rm api python manage.py makemigrations
 
