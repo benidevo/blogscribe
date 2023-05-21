@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import environ
 
 env = environ.Env()
@@ -6,7 +7,7 @@ env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 
-APP_DIR = ROOT_DIR /"core_apps"
+APP_DIR = ROOT_DIR / "core_apps"
 
 DEBUG = env.bool("DJANGO_DEBUG", False)
 
@@ -20,7 +21,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django.contrib.sites"
+    "django.contrib.sites",
 ]
 
 THIRD_PARTY_APPS = [
@@ -29,14 +30,10 @@ THIRD_PARTY_APPS = [
     "django_countries",
     "phonenumber_field",
     "drf_yasg",
-    "corsheaders"
+    "corsheaders",
 ]
 
-LOCAL_APPS = [
-    "core_apps.profiles",
-    "core_apps.common",
-    "core_apps.users"
-]
+LOCAL_APPS = ["core_apps.profiles", "core_apps.common", "core_apps.users"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -82,10 +79,7 @@ WSGI_APPLICATION = "blogscribe.wsgi.application"
 #     }
 # }
 
-DATABASES = {
-    "default": env.db("DATABASE_URL")
-}
-
+DATABASES = {"default": env.db("DATABASE_URL")}
 
 
 # Password validation
@@ -159,12 +153,9 @@ LOGGING = {
     "handlers": {
         "console": {
             "level": "DEBUG",
-            "class":"logging.StreamHandler",
-            "formatter": "verbose"
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
         }
     },
-    "root": {
-        "level": "INFO",
-        "handlers": ["console"]
-    }
+    "root": {"level": "INFO", "handlers": ["console"]},
 }
