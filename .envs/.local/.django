@@ -1,6 +1,7 @@
 CELERY_BROKER=redis://redis:6379/0
 
-DOMAIN=localhost
+DOMAIN=localhost:8080
 EMAIL_PORT=1025
 CELERY_FLOWER_USER=admin
 CELERY_FLOWER_PASSWORD=Test4321
+SIGNING_KEY=au8o5i0mdwgrdd0kzd7nc45pe5aqqtiul
