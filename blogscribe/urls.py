@@ -31,6 +31,7 @@ urlpatterns = [
         PasswordResetConfirmView.as_view(),
         name="reset_password",
     ),
+    path("api/v1/profiles/", include("core_apps.profiles.urls")),
 ]
 
 admin.site.site_header = "Blogscribe API"
