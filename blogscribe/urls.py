@@ -32,6 +32,7 @@ urlpatterns = [
         name="reset_password",
     ),
     path("api/v1/profiles/", include("core_apps.profiles.urls")),
+    path("api/v1/articles/", include("core_apps.articles.urls")),
 ]
 
 admin.site.site_header = "Blogscribe API"
