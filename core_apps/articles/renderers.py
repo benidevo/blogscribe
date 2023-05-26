@@ -34,4 +34,4 @@ class ArticlesJSONRenderer(JSONRenderer):
         if errors is not None:
             return super(ArticlesJSONRenderer, self).render(data)
 
-        return json({"status_code": status_code, "articles": data})
+        return json.dumps({"status_code": status_code, "articles": data})
