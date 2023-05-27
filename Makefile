@@ -12,6 +12,9 @@ down:
 down-v:
 	docker compose -f local.yml down -v
 
+test:
+	docker compose -f local.yml run --rm api pytest -p no:warnings --cov=. -v
+
 show-logs-db:
 	docker compose -f local.yml logs postgres
 
