@@ -19,7 +19,18 @@ services:
             - postgres
             - mailhog
             - redis
+            - es
         command: /start
+        networks:
+            - blogscribe-api
+
+    es:
+        image: elasticsearch:7.17.10
+        environment:
+            - discovery.type=single-node
+        ports:
+            - "9200:9200"
+            - "9300:9300"
         networks:
             - blogscribe-api
 
