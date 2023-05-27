@@ -12,8 +12,8 @@ down:
 down-v:
 	docker compose -f local.yml down -v
 
-dhow-logs:
-	docker compose -f local.yml logs
+show-logs-db:
+	docker compose -f local.yml logs postgres
 
 show-logs-api:
 	docker compose -f local.yml logs api
