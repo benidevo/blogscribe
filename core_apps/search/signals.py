@@ -7,7 +7,7 @@ from core_apps.articles.models import Article
 
 @receiver(post_save, sender=Article)
 def update_document(sender, instance=None, created=False, **kwargs):
-    """Update the ArticleDocument in Elasticsearch when an article instance is updated or created"""  # noqa
+    """Update the ArticleDocument in Elasticsearch when an article instance is updated or created"""
     registry.update(instance)
 
 

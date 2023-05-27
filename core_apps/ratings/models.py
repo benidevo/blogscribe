@@ -29,4 +29,4 @@ class Rating(TimeStampedModel):
         verbose_name_plural = _("Ratings")
 
     def __str__(self) -> str:
-        return f"{self.user.first_name} rated {self.article.title} as {self.get_rating_display}"  # noqa
+        return f"{self.user.first_name} rated {self.article.title} as {self.get_rating_display}"

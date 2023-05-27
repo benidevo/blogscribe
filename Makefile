@@ -39,16 +39,14 @@ volume:
 blogscribe-db:
 	docker compose -f local.yml exec postgres psql --username=benidevo --dbname=blogscribe
 
-search-index-create:
-	docker compose -f local.yml exec api python manage.py search_index --create
-earch-index-populate:
-	docker compose -f local.yml exec api python manage.py search_index --populate
+search-index:
+	docker compose -f local.yml exec api python manage.py search_index --rebuild
 
 flake8:
 	docker compose -f local.yml exec api flake8 .
 
 black-check:
-	docker compose -f local.yml  exec api black --chsck --exclude=migrations .
+	docker compose -f local.yml  exec api black --check --exclude=migrations .
 
 black-diff:
 	docker compose -f local.yml  exec api black --diff --exclude=migrations .

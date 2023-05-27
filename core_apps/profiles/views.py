@@ -106,7 +106,7 @@ class FollowAPIView(APIView):
             if user_profile.check_following(profile):
                 formatted_response = {
                     "status_code": status.HTTP_400_BAD_REQUEST,
-                    "message": f"You are already following {profile.user.first_name} {profile.user.last_name}",  # noqa
+                    "message": f"You are already following {profile.user.first_name} {profile.user.last_name}",
                 }
                 return Response(formatted_response, status=status.HTTP_400_BAD_REQUEST)
 
@@ -142,6 +142,6 @@ class UnfollowAPIView(APIView):
         user_profile.unfollow(profile)
         formatted_response = {
             "status_code": status.HTTP_200_OK,
-            "message": f"You cannot unfollowed {profile.user.first_name} {profile.user.first_name}",  # noqa
+            "message": f"You cannot unfollowed {profile.user.first_name} {profile.user.first_name}",
         }
         return Response(formatted_response, status=status.HTTP_200_OK)

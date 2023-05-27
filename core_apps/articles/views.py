@@ -33,7 +33,7 @@ class ArticleListCreateView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
         logger.info(
-            f"Article {serializer.data.get('title')} created by {self.request.user.first_name}"  # noqa
+            f"Article {serializer.data.get('title')} created by {self.request.user.first_name}"
         )
 
 
